@@ -7,4 +7,9 @@ describe "Author Model", type: :model do
         expect(author.last_name).to eq("Turing")
         expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
     end
+
+    it "#name should return the full name" do
+        a = Author.new(first_name: "Alan", last_name: "Turing")
+        expect(a.name).to eq("Alan Turing")
+    end
 end

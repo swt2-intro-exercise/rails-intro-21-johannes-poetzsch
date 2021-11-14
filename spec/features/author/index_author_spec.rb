@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe "Author index page", type: :feature do
+    it "should exist at 'authors_path' and render without error" do
+        visit authors_path
+    end
+
     it "should display all authors in a table" do
         @alan = FactoryBot.create :author
         visit authors_path

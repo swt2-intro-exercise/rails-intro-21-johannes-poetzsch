@@ -2,15 +2,19 @@ class AuthorsController < ApplicationController
     def new
     end
 
+    def index
+        @authors = Author.all
+    end
+
+    def show
+        @author = Author.find(params[:id])
+    end
+
     def create
         @author = Author.new(author_params)
 
         @author.save
         redirect_to @author
-    end
-
-    def show
-        @author = Author.find(params[:id])
     end
 
     private

@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @papers.each do |paper| %>
+    <% Paper.published_in(params[:year]).each do |paper| %>
       <tr>
         <td><%= paper.title %></td>
         <td><%= paper.venue %></td>

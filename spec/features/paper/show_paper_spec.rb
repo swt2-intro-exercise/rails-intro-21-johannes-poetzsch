@@ -17,6 +17,7 @@ describe "Paper details page", type: :feature do
     it "should list the authors" do
         @paper = FactoryBot.create :paper
         visit paper_path(@paper)
+        expect(@paper.authors).to_not be_empty
         @paper.authors.each do |author|
             expect(page).to have_text author.name
         end
